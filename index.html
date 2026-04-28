@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .itinerary-container { font-family: sans-serif; max-width: 600px; margin: auto; }
+		/*.itinerary-container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }*/
+        .day-block { border-left: 4px solid #007bff; padding-left: 20px; margin-bottom: 30px; position: relative; }
+        .day-block::before { content: ''; position: absolute; left: -10px; top: 0; width: 16px; height: 16px; background: #007bff; border-radius: 50%; }
+        h2 { margin-top: 0; color: #333; }
+        .activity { margin: 10px 0; color: #555; }
+        .time { font-weight: bold; color: #007bff; margin-right: 10px; }
+		
+		        .fees-section {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.fee-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.fee-tier:last-child {
+    border-bottom: none;
+}
+
+.fee-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.fee-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.register-btn {
+    display: block;
+    width: 90%;
+    text-align: center;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+    .hotel-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hotel-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    .hotel-info { flex: 1; }
+    .hotel-name { font-size: 1.2em; font-weight: bold; color: #333; }
+    .hotel-details { color: #555; margin: 5px 0; }
+    .price { font-weight: bold; color: #007bff; }
+    .book-btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+    }
+	/*hr {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }*/
+  .section-divider {
+    width: 43%;                /* Takes up half the page */
+    margin: 40px auto;         /* Centers it, adds vertical space */
+    border: 0;                 /* Removes default border */
+    border-top: 3px solid #ccc; /* Adds thick, light gray line */
+    /* Alternative sleek style: border-top: 4px double #4a90e2; */
+  }
+  .day-block { margin-bottom: 20px; }
+    .activity { 
+        display: flex; 
+        align-items: center; 
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+    }
+    .activity-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 15px;
+    }
+    .time { font-weight: bold; color: #555; display: block; }
+    .activity-details { flex-grow: 1; }
+	.map-container {
+        position: relative;
+        width: 100%;
+        height: 600px; /* Set your desired height */
+        overflow: hidden;
+    }
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    /* Optional: Make it smaller on small phones */
+    @media (max-width: 600px) {
+        .map-container {
+            height: 400px;
+        }
+    }
+	  .cta-container {
+    text-align: center;
+    padding: 40px;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4285F4; /* Google Blue */
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .cta-button:hover {
+    background-color: #357abd;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  }
+
+  .cta-text {
+    margin-bottom: 20px;
+    color: #3c4043;
+  }
+    </style>
+</head>
+<body>
+
+<div class="itinerary-container">
+    <h1>LA Sun, Family Fun Reunion<div class="fee-tier"><div class="fee-info"><p>Be sure to RSVP if you haven't already. A digital invite was sent to your email. Email Brandon if you need it resent.</p></div></div></h1>
+    
+    <div class="day-block">
+        <h2>Day 1: Arrival & Exploration</h2>
+        <div class="activity">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPYptkvD0a_nkAMIijOGjPLLsSzAbqkFAljDqIreeoDY8wBKoP1wB6nevQXDxPjyk06GJBcrd5P1qPxxSnVyTynKmANc0BopTlv8YxRT1mwiDwRrkxAC-Yhz6brZSc4hTcoYrwkQ=s1360-w1360-h1020-rw" alt="BJ's Restaurant" class="activity-image">
+            <div class="activity-details">
+                <span class="time">05:30 PM</span> Welcome Mixer in Burbank (tentatively at BJ's patio area)
+            </div>
+        </div>
+        <div class="activity">
+            <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/1683154752400-JD2FF6ESI2Y7MZSLX9XM/WebsitePic-152.jpg" alt="Round1 Karaoke" class="activity-image">
+            <div class="activity-details">
+                <span class="time">08:00 PM</span> Family Karoake & Games at Round1 Burbank
+            </div>
+        </div>
+    </div>
+	
+		
+	<div class="day-block">
+        <h2>Day 2: The Main Event</h2>
+        <div class="activity">
+            <img src="https://www.wbstudiotour.com/wp-content/uploads/2025/01/1556850_2736_R.jpg" alt="BJ's Restaurant" class="activity-image">
+            <div class="activity-details">
+                <span class="time">10:30 AM</span> Warner Bros Studio Tour
+            </div>
+        </div>
+        <div class="activity">
+            <img src="https://cdn.pixabay.com/photo/2014/04/02/10/43/rest-area-304357_1280.png" alt="Round1 Karaoke" class="activity-image">
+            <div class="activity-details">
+                <span class="time">01:00 PM</span> Open
+            </div>
+        </div>
+		<div class="activity">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFksqS2s1b8GkLT93SIVMRKHCKmUEFBSFhNoxgIC5l9jfNeEPytgv6ZRJTkJQqbXa7P5V-5tGgBmMGUMQn4fiLF-RrHVgiVBhaE3gm0BUj95gXs2HCmo9Qu2nIct7z18h21eyE=s1360-w1360-h1020-rw" alt="Round1 Karaoke" class="activity-image">
+            <div class="activity-details">
+                <span class="time">05:00 PM</span> Private Party at Dave & Buster's Hollywood
+            </div>
+        </div>
+    </div>
+	
+	<div class="day-block">
+        <h2>Day 3: Finale</h2>
+        <div class="activity">
+            <img src="https://cdn.pixabay.com/photo/2021/03/28/09/11/hollywood-6130707_1280.jpg" alt="BJ's Restaurant" class="activity-image">
+            <div class="activity-details">
+                <span class="time">10:30 AM</span> Group Picture at Hollywood Sign
+            </div>
+        </div>
+        <div class="activity">
+            <img src="finale.png" alt="Round1 Karaoke" class="activity-image">
+            <div class="activity-details">
+                <span class="time">11:30 AM</span> Brunch at Cedge's
+            </div>
+        </div>
+		<div class="activity">
+            <img src="https://cdn.pixabay.com/photo/2015/07/17/19/30/griffith-observatory-849639_1280.jpg" alt="Round1 Karaoke" class="activity-image">
+            <div class="activity-details">
+                <span class="time">01:00 PM</span> Griffith Observatory (yoga on the lawn with Wyoma)
+            </div>
+        </div>
+    </div>
+
+    <!-- Repeat structure for Day 2 & 3 -->
+</div>
+<hr class="section-divider">
+<div class="fees-section">
+    <h2>Event Fees</h2>
+    
+    <div class="fee-tier">
+        <div class="fee-info">
+            <h3>Warner Bros Studio Tour</h3>
+            <p>Accepting fees thru May 30th</p>
+        </div>
+        <div class="price">$65</div>
+    </div>
+
+    <div class="fee-tier">
+        <div class="fee-info">
+            <h3>T-Shirts</h3>
+            <p>For those interested</p>
+        </div>
+        <div class="price">Quote coming soon</div>
+    </div>
+
+    <!--<div class="fee-tier">
+        <div class="fee-info">
+            <h3>VIP Experience</h3>
+            <p>Includes workshop materials & lunch</p>
+        </div>
+        <div class="price">$350</div>
+    </div>-->
+	<br>
+    <a target="_blank" href="https://www.paypal.com/donate/?business=AKV43Z48V4ZEJ&amount=65&no_recurring=0&currency_code=USD" class="register-btn">Pay Now</a>
+	<div class="fee-tier"><div class="fee-info"><p>Cali family will cover the Dave & Busters meal on Day 2 and Brunch gathering on Day 3.</p></div></div>
+</div>
+
+<hr class="section-divider">
+<div class="itinerary-container">
+    <h2>Event Lodging Options</h2>
+    
+    <!-- Hotel Option 1 -->
+    <div class="hotel-card">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipO3rarodcmgyfIu0EW3TipVjN7h7c9-vpVic5jC=s1360-w1360-h1020-rw" alt="Photo of Grand Plaza Hotel lobby">
+        <div class="hotel-info">
+            <div class="hotel-name">Hotel Burbank</div>
+            <p class="hotel-details">Located in downtown Burbank. Easy walk to shops. (Email Brandon to reserve)</p>
+            <p class="price">$150 / night</p>
+            <a target="_blank" href="https://www.hotelburbank.com/" class="book-btn">Website</a>
+        </div>
+    </div>
+	<hr class="section-divider">
+<h2>Activities Map</h2><p>Click a location to review</p>
+<!-- Add script to the <head> of your page to load the embeddable map component -->
+<div class="map-container"><iframe width="700" height="600" allow="local-network-access; geolocation" title="Activities" src="https://brandon-price.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=33e313e3beb84753841d6e42ae990ce4&theme=light&bookmarks=true&scroll=false&center=-118.30900891942375,34.14434233211025&scale=144447.638572" ></iframe></div>
+<div class="fee-tier"><div class="fee-info"><p>All activities are about a 10-20 minute drive away from each other and are located where most are staying. Carpooling is highly encouraged. Uber costs are roughly $10-20 each way.</p></div></div>
+    <!-- Hotel Option 2 -->
+    <!--<div class="hotel-card">
+        <img src="hotel2.jpg" alt="Photo of City Center Suites room">
+        <div class="hotel-info">
+            <div class="hotel-name">City Center Suites</div>
+            <p class="hotel-details">Complimentary breakfast, shuttle service.</p>
+            <p class="price">$180 / night</p>
+            <a href="#" class="book-btn">Website</a>
+        </div>
+    </div>-->
+</div>
+
+<div class="cta-container">
+  <h2 class="cta-text">Family Photos?</h2>
+  <p class="cta-text">We are creating a visual family tree. Add your favorite shots to our shared album!</p>
+  <a href="https://photos.google.com/updates" class="cta-button" target="_blank">
+    📸 Upload Your Photos
+  </a>
+</div>
+
+</body>
+</html>
