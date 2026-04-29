@@ -296,7 +296,18 @@
 <!-- Add script to the <head> of your page to load the embeddable map component -->
 <script type="module" src="https://js.arcgis.com/5.0/embeddable-components/"></script>
 <!-- Add custom element to <body> of your page -->
- <arcgis-embedded-map style="height:600px;width:700px;" item-id="33e313e3beb84753841d6e42ae990ce4" theme="light" bookmarks-enabled time-zone-label-enabled center="-118.30900891942375,34.14434233211025"scale="144447.638572" portal-url="https://brandon-price.maps.arcgis.com"></arcgis-embedded-map>
+ <div style="width: 100%; max-width: 100%; overflow: hidden;">
+    <arcgis-embedded-map 
+        style="height: 50vh; width: 100%;" 
+        item-id="33e313e3beb84753841d6e42ae990ce4" 
+        theme="light" 
+        bookmarks-enabled 
+        time-zone-label-enabled 
+        center="-118.30900891942375,34.14434233211025"
+        scale="144447.638572" 
+        portal-url="https://brandon-price.maps.arcgis.com">
+    </arcgis-embedded-map>
+</div>
 
 <div class="fee-tier"><div class="fee-info"><p>All activities are about a 10-20 minute drive away from each other and are located where most are staying. Carpooling is highly encouraged. Uber costs are roughly $10-20 each way.</p></div></div>
     <!-- Hotel Option 2 -->
