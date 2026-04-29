@@ -191,6 +191,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+	z-index: 1000;
+}
+
+/* If you want to blur the background elements (Modern Browsers) */
+body:has(#db-popup:target) .activity {
+    filter: blur(2px) grayscale(50%);
 }
 
 /* 3. Basic styling for the content box */
