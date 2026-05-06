@@ -30,28 +30,7 @@
   gap: 20px;          /* Adjust based on your layout */
 }
 
-.merged-morning::after {
-  content: "or";
-  position: absolute;
-  
-  /* Center it perfectly */
-   inset: 0;
-  /* Auto margins center it within that space */
-  margin: auto;
-  /* ... styling ... */
-  width: min-content; /* Helps ensure it stays centered if sized oddly */
-  height: min-content;
-  
-  /* Styling */
-  background: white;       /* Match your background color to 'break' the line */
-  padding: 5px 10px;
-  border-radius: 50%;
-  font-weight: bold;
-  z-index: 10;             /* Ensures it sits on top of images */
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: makes it pop */
-}
+
 .merged-morning .activity-image {
     width: 80px;      /* Matches existing .activity-image size */
     height: 80px;     /* Matches existing .activity-image size */
@@ -295,7 +274,7 @@ body:has(#db-popup:target) .activity {
                 <span class="time">10:30 AM</span> Warner Bros Studio Tour
             </div>
         </div>
-		<span>or</span>
+		<span style="vertical-align:middle;">or</span>
         <div class="activity">
             <img src="https://cdn.pixabay.com/photo/2017/01/09/23/38/santa-monica-pier-1968003_1280.jpg" alt="Round1" class="activity-image">
             <div class="activity-details">
