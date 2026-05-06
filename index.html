@@ -27,7 +27,13 @@
     gap: 10px;                    /* Space between the two merged items */
     margin-bottom: 15px;          /* Matches surrounding spacing */
 }
-
+.merged-morning .activity-image {
+    width: 80px;      /* Matches existing .activity-image size */
+    height: 80px;     /* Matches existing .activity-image size */
+    object-fit: cover; /* Ensures images don't stretch */
+    border-radius: 4px; /* Matches styling */
+    margin-right: 15px; /* Spacing */
+}
 /* Base activity style adjustment for merged items */
 .merged-morning .activity {
     flex: 1;                      /* Both items share space equally */
@@ -37,15 +43,6 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-}
-
-/* Fix the Image Sizes */
-.merged-morning .activity-image {
-    width: 100%;                  /* Fills width of the flex-item */
-    height: 120px;                /* Set a uniform height */
-    object-fit: cover;            /* Crops image to fit without stretching */
-    border-radius: 4px;
-    margin-bottom: 10px;          /* Space below image */
 }
 
 /* Detail text */
