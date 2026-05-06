@@ -23,17 +23,20 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 		
-	.aftertext::after {
+	.aftertext {                
+  position: relative; /* REQUIRED: Parent must be relative */
+  text-align: center; /* Optional: centers other text */
+}
+
+.aftertext::after {                
   content: "or";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* Adds this to center it */
-  font-weight: bold;
-  color: #888;
-  background: #fff;
-  /* Optional: Adjust vertical positioning */
-  top: 50%;
-  transform: translate(-50%, -50%); /* Centers vertically and horizontally */
+  position: absolute;                
+  left: 50%; /* Moves left edge to center */
+  transform: translateX(-50%); /* Moves element back by 50% of its own width */
+  font-weight: bold;                
+  color: #888;                
+  background: #fff; /* Ensures text stays legible over lines */
+  padding: 0 10px; /* Optional: creates space around 'or' */
 }
 .merged-morning .activity-image {
     width: 80px;      /* Matches existing .activity-image size */
