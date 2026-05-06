@@ -24,12 +24,16 @@
 }
 		
 	.aftertext::after {
-    content: "or";
-    position: absolute;
-     left: 50%; /*Positions it in the gap */
-    font-weight: bold;
-    color: #888;
-    background: #fff; /* Optional: adds a little background to the 'or' */
+  content: "or";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Adds this to center it */
+  font-weight: bold;
+  color: #888;
+  background: #fff;
+  /* Optional: Adjust vertical positioning */
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centers vertically and horizontally */
 }
 .merged-morning .activity-image {
     width: 80px;      /* Matches existing .activity-image size */
