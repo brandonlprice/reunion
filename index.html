@@ -24,15 +24,30 @@
 }
 		
 	
+.merged-morning {
+  position: relative; /* Essential for absolute positioning of the "or" */
+  display: flex;      /* Assumes your activities are side-by-side */
+  gap: 20px;          /* Adjust based on your layout */
+}
 
-.merged-morningt::after {                
+.merged-morning::after {
   content: "or";
-  position: absolute;                
-  left: 50%; /* Moves left edge to center */
-  font-weight: bold;                
-  color: #888;                
-  background: #fff; /* Ensures text stays legible over lines */
-  padding: 0 10px; /* Optional: creates space around 'or' */
+  position: absolute;
+  
+  /* Center it perfectly */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Styling */
+  background: white;       /* Match your background color to 'break' the line */
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 10;             /* Ensures it sits on top of images */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: makes it pop */
 }
 .merged-morning .activity-image {
     width: 80px;      /* Matches existing .activity-image size */
