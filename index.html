@@ -45,14 +45,23 @@
 }
 
 /* Base activity style adjustment for merged items */
-.merged-morning .activity {
-    flex: 1;                      /* Both items share space equally */
-    flex-direction: column;       /* Images on top, text below */
-    align-items: flex-start;      /* Align content to the left */
+/*.merged-morning .activity {
+    flex: 1;                     
+    flex-direction: column;     
+    align-items: flex-start;      
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
+}*/
+		.merged-morning .activity:first-of-type::after {
+    content: "or";
+    position: absolute;
+    right: -18px; /* Remove quotes around pixels */
+    font-weight: bold;
+    color: #888;
+    background: #fff;
+    padding: 2px;
 }
 		.merged-morning .activity-details {
     font-size: 0.9rem;
