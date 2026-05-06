@@ -22,40 +22,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.merged-morning {
-    display: flex;                /* Aligns children horizontally */
-    gap: 10px;                    /* Space between the two merged items */
-    margin-bottom: 15px;          /* Matches surrounding spacing */
-}
-.merged-morning .activity-image {
-    width: 80px;      /* Matches existing .activity-image size */
-    height: 80px;     /* Matches existing .activity-image size */
-    object-fit: cover; /* Ensures images don't stretch */
-    border-radius: 4px; /* Matches styling */
-    margin-right: 15px; /* Spacing */
-}
-/* Base activity style adjustment for merged items */
-.merged-morning .activity {
-    flex: 1;                      /* Both items share space equally */
-    flex-direction: column;       /* Images on top, text below */
-    align-items: flex-start;      /* Align content to the left */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
 
-/* Detail text */
-.merged-morning .activity-details {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-		@media (max-width: 600px) {
-    .merged-morning {
-        flex-direction: column; /* Stack vertically on small screens */
-    }
-}
 .fee-tier {
     display: flex;
     justify-content: space-between;
