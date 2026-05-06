@@ -246,21 +246,26 @@ body:has(#db-popup:target) .activity {
 }
 		@media (max-width: 600px) {
   .merged-morning {
-    flex-direction: column; /* Stacks items vertically */
-    gap: 5px;               /* Shrinks the gap between items */
-    align-items: center;    /* Centers the 'or' and the activities */
+    gap: 5px; /* Tighten the space between items */
   }
 
-  .merged-morning .activity {
-    width: 100%;           /* Ensures activities take full width when stacked */
-    margin: 5px 0;
-  }
-  
-  /* Optional: Make the "or" smaller or italic on mobile */
   .merged-morning > span {
-    font-size: 0.9em;
-    font-style: italic;
-    color: #888;
+    font-size: 0.8rem; /* Smaller text */
+    margin: 0 -10px; /* Negative margin pulls activities closer together */
+    z-index: 1; /* Ensures it stays on top */
+    background: white; /* Optional: adds legibility if it overlaps images */
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  .merged-morning .activity-image {
+    width: 60px; /* Scale down images slightly for small screens */
+    height: 60px;
+    margin-right: 8px;
+  }
+
+  .activity-details {
+    font-size: 0.9rem; /* Slightly smaller text for details */
   }
 }
     </style>
