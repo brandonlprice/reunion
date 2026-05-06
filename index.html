@@ -35,9 +35,12 @@
   position: absolute;
   
   /* Center it perfectly */
-  top: 50%;
-  left: 45%;
-  transform: translate(-50%, -50%);
+   inset: 0;
+  /* Auto margins center it within that space */
+  margin: auto;
+  /* ... styling ... */
+  width: min-content; /* Helps ensure it stays centered if sized oddly */
+  height: min-content;
   
   /* Styling */
   background: white;       /* Match your background color to 'break' the line */
