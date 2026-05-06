@@ -23,11 +23,37 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .merged-morning {
-    display: flex;
-    gap: 15px; /* Slightly larger gap for visual separation */
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Allows items to wrap on mobile */
+    display: flex;                /* Aligns children horizontally */
+    gap: 10px;                    /* Space between the two merged items */
+    margin-bottom: 15px;          /* Matches surrounding spacing */
 }
+
+/* Base activity style adjustment for merged items */
+.merged-morning .activity {
+    flex: 1;                      /* Both items share space equally */
+    flex-direction: column;       /* Images on top, text below */
+    align-items: flex-start;      /* Align content to the left */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Fix the Image Sizes */
+.merged-morning .activity-image {
+    width: 100%;                  /* Fills width of the flex-item */
+    height: 120px;                /* Set a uniform height */
+    object-fit: cover;            /* Crops image to fit without stretching */
+    border-radius: 4px;
+    margin-bottom: 10px;          /* Space below image */
+}
+
+/* Detail text */
+.merged-morning .activity-details {
+    font-size: 0.9rem;
+    color: #555;
+}
+
 		@media (max-width: 600px) {
     .merged-morning {
         flex-direction: column; /* Stack vertically on small screens */
