@@ -285,7 +285,7 @@ body:has(#db-popup:target) .activity {
         <div class="activity">
             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/EAwSx1IEj1g_xCYMlpOfXw/o.jpg" alt="BJ's Restaurant" class="activity-image widthmobile">
             <div class="activity-details">
-                <span class="time">05:30 PM</span> Welcome Mixer in Burbank (tentatively at <a href="https://maps.apple/p/ypCoIS2Y7uvbvY" target="_blank">BJ's</a> patio area)</div></div>
+                <span class="time">05:30 PM</span> Welcome Mixer in Burbank (tentatively at <a href="#" data-apple="https://maps.apple/p/ypCoIS2Y7uvbvY" data-google="https://maps.app.goo.gl/h4jtDu3T4CpxoxPK6" class="map-link" target="_blank">BJ's</a> patio area)</div></div>
         <div class="activity">
             <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/1683154752400-JD2FF6ESI2Y7MZSLX9XM/WebsitePic-152.jpg" alt="Round1 Karaoke" class="activity-image">
             <div class="activity-details">
@@ -459,4 +459,25 @@ body:has(#db-popup:target) .activity {
 </div>
 
 </body>
+<script>
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Detect if the user is on an iOS device (iPhone/iPad)
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    // 2. Find all the map links on the page
+    const mapLinks = document.querySelectorAll('.map-link');
+
+    // 3. Assign the correct href to each link based on the device
+    mapLinks.forEach(link => {
+        if (isIOS) {
+            link.href = link.getAttribute('data-apple');
+        } else {
+            link.href = link.getAttribute('data-google');
+        }
+    });
+});
+</script>
+</script>
 </html>
