@@ -238,7 +238,7 @@
 }
 
 /* If you want to blur the background elements (Modern Browsers) */
-body:has(#db-popup:target) .activity {
+body:has(#db-popup:target, #db-popup2:target) .activity {
     filter: blur(2px) grayscale(50%);
 }
 
@@ -289,7 +289,8 @@ body:has(#db-popup:target) .activity {
         <div class="activity">
             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/pk6L-QJucUdG46viRSdvWQ/o.jpg" alt="Black Angus Restaurant" class="activity-image widthmobile">
             <div class="activity-details">
-                <span class="time">04:30 PM</span> Welcome Mixer at <a href="#" data-apple="https://maps.apple/p/2xWeQFzX3vXzrT" data-google="https://maps.app.goo.gl/ZhiNdfjGq5SvZ9EU8" class="map-link" target="_blank">Over Under Burbank</a> (food individually covered by guests)</div></div>
+                <span class="time">04:30 PM</span> Welcome Mixer at <a href="#" data-apple="https://maps.apple/p/2xWeQFzX3vXzrT" data-google="https://maps.app.goo.gl/ZhiNdfjGq5SvZ9EU8" class="map-link" target="_blank">Over Under Burbank</a> (food individually covered by guests), 
+			<a href="#db-popup2" class="popup-link">Parking Info</a></div></div>
         <div class="activity">
             <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/1683154752400-JD2FF6ESI2Y7MZSLX9XM/WebsitePic-152.jpg" alt="Round1 Karaoke" class="activity-image">
             <div class="activity-details">
@@ -343,7 +344,20 @@ body:has(#db-popup:target) .activity {
 	
    
     </div>
-	
+
+	 <div id="db-popup" class="popup-overlay"> 
+      <div class="popup-content"> 
+        <!-- Close button for the popup --> 
+        <p style="text-align:right;margin:0;"><a style="text-decoration:none;padding:5px 8px 5px 8px;background:lightgray;" href="#" class="close-popup">X</a></p>
+		  <div><b>Over Under Public House Burbank Parking:</b>
+<ul>
+	<li>Free parking in structure located at <a href="#" data-apple="https://maps.apple/p/L4TJg63617A0hm" data-google="https://maps.app.goo.gl/CdrXafhF2sFFP4KV8" class="map-link" target="_blank">257 E Palm Ave</a></li>
+	<li>Free parking in structure located at <a href="#" data-apple="https://maps.apple/p/RkCVziK.c2bd3a" data-google="https://maps.app.goo.gl/RFEKnbV45x2jdngAA" class="map-link" target="_blank">Ross Clothing Store</a></li>
+</ul>
+		  </div>
+	  </div>
+	 </div>
+			  
  <div id="db-popup" class="popup-overlay"> 
       <div class="popup-content"> 
         <!-- Close button for the popup --> 
